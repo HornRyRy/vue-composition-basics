@@ -1,10 +1,17 @@
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/posts">Posts</RouterLink>
   </nav>
+<RouterView />
 
-  <RouterView />
+  <!-- The below use the keep alive activated hooks -->
+  <!-- <router-view v-slot="{ Component }">
+<keep-alive>
+  <component :is="Component" />
+</keep-alive>
+  </router-view> -->
+
 </template>
 
 <style scoped>

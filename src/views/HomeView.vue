@@ -15,13 +15,17 @@
 
     <div class="edit">
       <h4>Edit counter title:</h4>
-      <input v-model="counterData.title" type="text">
+      <input v-model="counterData.title" type="text" v-autofocus>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch } from 'vue'
+
+//imports
+import { ref, reactive, computed, watch, onBeforeMount, onMounted, onBeforeUnmount, onUnmounted, onActivated, onDeactivated, onBeforeUpdate, onUpdated } from 'vue'
+import { vAutofocus } from '@/directives/vAutofocus'
+
 
 //// non reactive data
 const appTitle = 'My Ok Counter App'
@@ -55,6 +59,41 @@ const increaseCounter = (amount, e) =>{
 const decreaseCounter = (amount) =>{
   counterData.count -= amount
 }
+
+//hooks
+onBeforeMount(() =>{
+  console.log('onBeforeMount')
+})
+onMounted(() =>{
+  console.log('onMounted')
+})
+onBeforeUnmount(() =>{
+  console.log('onBeforeUnmount')
+})
+onUnmounted(() =>{
+  console.log('onUnmounted')
+})
+
+//Activated hooks
+onActivated(() =>{
+  console.log('onActivated')
+})
+
+onDeactivated(() =>{
+  console.log('onDeactivated')
+})
+
+//Update hooks
+
+onBeforeUpdate(() =>{
+  console.log('onBeforeUpdate')
+})
+onUpdated(() =>{
+  console.log('onUpdated')
+})
+
+
+
 </script>
 
 <!-- <script>
