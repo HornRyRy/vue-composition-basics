@@ -21,7 +21,28 @@
 //imports
 
 import { vAutofocus } from '@/directives/vAutofocus';
+
+// Posts
+
+const posts = ref([
+  {
+    id: 'id1',
+    title: 'Post 1'
+  },
+  {
+    id: 'id2',
+    title: 'Post 2'
+  },
+  {
+    id: 'id3',
+    title: 'Post 3'
+  },
+])
+
+
 </script>
+
+
 
 <style scoped>
   ul {
